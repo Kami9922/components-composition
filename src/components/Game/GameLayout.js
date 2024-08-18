@@ -2,16 +2,57 @@ import React from "react";
 import PropTypes from "prop-types";
 import Information from "../Information/Information";
 import Field from "../Field/Field";
+import styles from "./../../css/game.module.css";
 
-const GameLayout = (props) => {
+const GameLayout = ({
+	isDrawValue,
+	field,
+	currentPlayer,
+	setCurrentPlayer,
+	setField,
+	WIN_PATTERNS,
+	setIsGameEnded,
+	isGameEnded,
+	setIsDraw,
+}) => {
 	return (
-		<>
-			<Information />
-			<Field />
-		</>
+		<div>
+			<Information isDrawValue={isDrawValue} />
+			<Field
+				field={field}
+				setField={setField}
+				currentPlayer={currentPlayer}
+				setCurrentPlayer={setCurrentPlayer}
+				WIN_PATTERNS={WIN_PATTERNS}
+				setIsGameEnded={setIsGameEnded}
+				isGameEnded={isGameEnded}
+				setIsDraw={setIsDraw}
+			/>
+			<div
+				className={styles["reset-button"]}
+				onClick={() => {
+					setCurrentPlayer("X");
+					setField(["", "", "", "", "", "", "", "", ""]);
+					setIsDraw(false);
+					setIsGameEnded(false);
+				}}
+			>
+				Начать заново
+			</div>
+		</div>
 	);
 };
 
-GameLayout.propTypes = {};
+GameLayout.propTypes = {
+	field: PropTypes.array,
+	setField: PropTypes.array,
+	isDrawValue: PropTypes.string,
+	currentPlayer: PropTypes.string,
+	setCurrentPlayer: PropTypes.string,
+	WIN_PATTERNS: PropTypes.array,
+	isGameEnded: PropTypes.bool,
+	setIsGameEnded: PropTypes.bool,
+	setIsDraw: PropTypes.bool,
+};
 
 export default GameLayout;

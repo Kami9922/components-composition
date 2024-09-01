@@ -46,16 +46,4 @@ const Game = (props) => {
 	);
 };
 
-Game.propTypes = {
-	field: PropTypes.array,
-	setField: PropTypes.array,
-	isDrawValue: PropTypes.string,
-	currentPlayer: PropTypes.string,
-	setCurrentPlayer: PropTypes.string,
-	WIN_PATTERNS: PropTypes.array,
-	isGameEnded: PropTypes.bool,
-	setIsGameEnded: PropTypes.bool,
-	setIsDraw: PropTypes.bool,
-};
-
 export default Game;

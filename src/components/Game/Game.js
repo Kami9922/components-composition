@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
+
 import GameLayout from "./GameLayout";
 
 const Game = (props) => {
@@ -30,7 +30,6 @@ const Game = (props) => {
 		isDrawValue = `Ходит: ${currentPlayer}`;
 	}
 
-	console.log(isGameEnded);
 	return (
 		<GameLayout
 			field={field}

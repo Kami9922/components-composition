@@ -54,13 +54,13 @@ const FieldLayout = ({
 
 FieldLayout.propTypes = {
 	field: PropTypes.array,
-	setField: PropTypes.array,
+	setField: PropTypes.func,
 	currentPlayer: PropTypes.string,
-	setCurrentPlayer: PropTypes.string,
+	setCurrentPlayer: PropTypes.func,
 	WIN_PATTERNS: PropTypes.array,
 	isGameEnded: PropTypes.bool,
-	setIsGameEnded: PropTypes.bool,
-	setIsDraw: PropTypes.bool,
+	setIsGameEnded: PropTypes.func,
+	setIsDraw: PropTypes.func,
 };
 
 export default FieldLayout;
